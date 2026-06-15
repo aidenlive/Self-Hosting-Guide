@@ -1,0 +1,302 @@
+Personal Fork Rebrand, Cleanup & Independence Protocol
+
+Purpose:
+Use this protocol to clean up a personal forked repository, rebrand it as [name-of-repository], break away from the original fork identity, and prepare it for private local or VM-based use.
+
+Applies to:
+Personal forks, cloned starter kits, inherited repositories, offline tools, private utilities, local-first apps, self-hosted projects, personal automation systems, and repositories being separated from an upstream root.
+
+Core Workflow:
+Assess the forked repository, identify inherited upstream references, define the new repository identity, preserve useful work, archive retired fork artifacts, update branding and documentation, normalize configuration for private local use, validate offline/local workflows, and mark the project complete only when the repository stands independently as [name-of-repository].
+
+1. Assess the Current Fork State
+
+Before making changes:
+- Review README.md, request.txt, STATUS.md, docs/plan.md, docs/taxonomy.md, package manifests, config files, scripts, licenses, CI files, deployment files, assets, tests, and existing docs.
+- Identify whether the repository is a direct fork, starter clone, partial copy, abandoned upstream, active upstream fork, or already partially rebranded.
+- Identify all inherited upstream references, including repository names, package names, badges, URLs, deployment links, issue templates, sponsors, author names, logos, screenshots, docs, comments, examples, environment names, and metadata.
+- Identify what should be preserved, rebranded, archived, replaced, or removed from active use.
+- Do not delete, overwrite, rename, or restructure files until their purpose is understood.
+
+Create or update request.txt with:
+- Original cleanup and rebrand request
+- Current fork state
+- New repository name: [name-of-repository]
+- Desired independent identity
+- Private/local/VM usage assumptions
+- Scope boundaries
+- Acceptance criteria
+- Risks, blockers, and open questions
+
+2. Define the New Repository Identity
+
+Before implementation, define what [name-of-repository] is now.
+
+Document:
+- Repository purpose
+- Intended users
+- Private, local, offline, or VM-based usage model
+- Core features or workflows to preserve
+- Upstream features to remove, archive, or ignore
+- New naming convention
+- New documentation tone
+- Runtime requirements
+- Supported commands
+- Maintenance expectations
+- Definition of done
+
+The repository should no longer present itself as the original upstream project unless attribution is legally required.
+
+3. Establish Baseline Project Files
+
+Create or update these files when missing, stale, or incomplete:
+- README.md
+- request.txt
+- STATUS.md
+- docs/plan.md
+- docs/taxonomy.md
+
+Recommended directories:
+- docs/
+- src/ or app/
+- tests/
+- assets/
+- scripts/
+- examples/ when useful
+- @archives/ for retired fork artifacts, obsolete upstream files, old branding, unused templates, and removed active files
+
+Do not force a new structure when the repository already has a coherent layout. Normalize only when it improves clarity, maintainability, independence, or local usability.
+
+4. Create or Update docs/taxonomy.md
+
+docs/taxonomy.md must define:
+- New repository name: [name-of-repository]
+- Project type
+- Repository state
+- Fork origin status
+- Private/local/VM usage model
+- Target users
+- Primary use cases
+- Active modules, services, routes, packages, or components
+- Runtime requirements
+- Configuration requirements
+- External dependencies
+- Offline/local constraints
+- Files or areas inherited from upstream
+- Files or areas intentionally retired
+- Documentation requirements
+- Testing and validation requirements
+- Definition of done
+
+Use taxonomy as the source of truth for cleanup, naming, rebranding, documentation, validation, and release-readiness decisions.
+
+5. Plan Before Rebranding or Refactoring
+
+Create or update docs/plan.md before major cleanup, renaming, rebranding, restructuring, dependency changes, or script changes.
+
+docs/plan.md must include:
+- Current fork state summary
+- Desired independent outcome
+- Goals and non-goals
+- Rebrand plan
+- Upstream-reference cleanup plan
+- File-retirement and archive plan
+- Structure and naming plan
+- Dependency and script cleanup plan
+- Local/VM/offline usage plan
+- Documentation update plan
+- Testing and validation strategy
+- Acceptance criteria
+
+Do not begin major implementation, renaming, or restructuring until docs/plan.md has been reviewed and explicitly approved.
+
+6. Track Work in STATUS.md
+
+Maintain STATUS.md as the active project log.
+
+Track:
+- Current phase
+- Session date
+- Completed work
+- Files changed
+- Files archived
+- Upstream references removed or retained
+- Branding decisions
+- Configuration decisions
+- Local/VM validation status
+- Offline-readiness status
+- Blockers and risks
+- Pending tasks
+- Approval status
+- Completion status
+
+Update STATUS.md after assessment, planning, rebranding, cleanup, archiving, documentation updates, validation, and final completion.
+
+7. Rebrand the Repository
+
+Replace active project identity with [name-of-repository].
+
+Review and update:
+- README title and description
+- package name
+- app name
+- metadata
+- CLI names
+- environment names
+- config labels
+- browser title
+- UI copy
+- logos and icons
+- screenshots
+- badges
+- repository URLs
+- deployment links
+- documentation references
+- example commands
+- comments that describe the active project
+- license and attribution sections when applicable
+
+Preserve legally required notices, licenses, and attribution. Do not misrepresent upstream authorship.
+
+8. Break Away from the Fork Root
+
+Remove active dependency on the fork identity where appropriate.
+
+Check:
+- Git remote names and URLs
+- README fork language
+- upstream sync instructions
+- issue templates
+- pull request templates
+- contribution instructions
+- release workflows
+- CI/CD references
+- package publishing metadata
+- deployment provider references
+- original project badges
+- original support links
+- original documentation links
+- original screenshots and examples
+
+If upstream history or attribution must remain, document it clearly in README.md or docs/taxonomy.md without making the active project appear dependent on the original root.
+
+9. Archive Instead of Delete
+
+Default rule:
+Move retired, obsolete, duplicate, replaced, or removed active files to @archives/ instead of deleting them.
+
+When archiving:
+- Preserve the original relative path under @archives/.
+- Example: .github/ISSUE_TEMPLATE/bug.md becomes @archives/.github/ISSUE_TEMPLATE/bug.md.
+- Keep filenames intact unless a collision requires a clear suffix.
+- Do not archive secrets, generated dependencies, build outputs, caches, or ignored files.
+- Record archived files and the reason in STATUS.md.
+- Update active references so archived files are no longer imported, executed, linked, or treated as current source.
+
+Delete only when the file is unsafe to retain, generated, intentionally ignored, or explicitly approved for removal.
+
+10. Configure for Private Local or VM Use
+
+Prioritize reliable private execution over public deployment.
+
+Review and update:
+- install commands
+- dev commands
+- build commands
+- test commands
+- lint and typecheck commands
+- local environment examples
+- .env.example
+- Docker or VM notes when applicable
+- local storage assumptions
+- file paths
+- ports
+- secrets handling
+- offline behavior
+- dependency installation notes
+- backup and restore notes when applicable
+
+Remove or archive active assumptions tied to public hosting, cloud deployment, upstream package publishing, external analytics, public issue tracking, or public contribution workflows unless intentionally retained.
+
+11. Clean Up Inherited Starter or Upstream Artifacts
+
+Find and resolve:
+- stale upstream branding
+- placeholder content
+- unused starter files
+- unused assets
+- dead routes
+- broken scripts
+- obsolete examples
+- duplicated components
+- unused dependencies
+- stale comments
+- broken links
+- old screenshots
+- irrelevant badges
+- public deployment leftovers
+- references to upstream docs that no longer apply
+
+Archive retired artifacts and update all active references.
+
+12. Maintain Documentation Consistency
+
+README.md must reflect the independent project state.
+
+Include:
+- Project name: [name-of-repository]
+- Purpose
+- Private/local/VM usage context
+- Stack
+- Setup instructions
+- Environment requirements
+- Commands
+- Repository structure
+- Configuration notes
+- Testing and validation instructions
+- Known limitations
+- Attribution or fork-origin note when legally or contextually required
+- Current status
+
+Keep request.txt, STATUS.md, docs/plan.md, docs/taxonomy.md, setup instructions, usage instructions, and architecture notes aligned with the actual repository.
+
+13. Validate the Repository
+
+Run validation appropriate to the project.
+
+Check:
+- install succeeds
+- dev server or local command starts
+- build succeeds when applicable
+- lint passes when applicable
+- typecheck passes when applicable
+- tests pass when applicable
+- CLI commands work when applicable
+- local/VM assumptions are documented
+- offline behavior is confirmed or limitations are documented
+- README commands match reality
+- no active references point to archived files
+- no active branding references the old fork unless intentionally retained
+
+Document validation results in STATUS.md.
+
+14. Completion Rules
+
+Work may be marked complete only when:
+- [name-of-repository] is the active repository identity.
+- Required upstream references have been removed, replaced, archived, or intentionally documented.
+- Retired files are archived under @archives/ with original relative paths.
+- README.md, request.txt, STATUS.md, docs/plan.md, and docs/taxonomy.md reflect the current independent state.
+- Local, VM, or offline usage instructions are accurate.
+- Validation has passed or approved exceptions are documented.
+- STATUS.md records the final state.
+
+Non-Negotiables:
+- Assess before rebranding or restructuring.
+- Plan before major implementation or cleanup.
+- Get docs/plan.md approved before major refactoring, renaming, or structural changes.
+- Archive retired files instead of deleting them.
+- Do not overwrite useful inherited work without understanding it.
+- Do not leave stale upstream branding active.
+- Do not leave public deployment, publishing, or contribution assumptions active unless intentionally retained.
+- Do not mark the repository complete while cleanup, documentation, archiving, validation, or local-use requirements remain unresolved.
