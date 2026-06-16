@@ -1,0 +1,80 @@
+Self-Hosting Handbook — Rebrand, Cleanup & Independence Request
+================================================================
+
+Original Request
+----------------
+Review, assess, and rewrite the existing guide to a higher standard following
+writer-agent.xml, and bring the repository into compliance with
+REBRAND-PROTOCOL.txt. Move all existing repository content to @archives/, then
+rebuild it as a better-organized system that follows recommended patterns and
+conventions, with substantially improved writing and structure.
+
+Current Fork State
+------------------
+- Direct fork of mikeroyal/Self-Hosting-Guide (an "awesome-list" of self-hosting
+  software, hardware, and learning resources).
+- Single monolithic README.md (~7,150 lines / ~590 KB) containing ~2,745 links.
+- 114 references to the upstream author "mikeroyal" (badges, follow links,
+  "Back to the Top" anchors, issue/PR links).
+- 135 images hot-linked from user-images.githubusercontent.com (upstream-owned,
+  not durable).
+- A stray, non-functional "Getting Started  with Self-Hosting.dockerfile"
+  (placeholder snippets, "Code samples coming soon!").
+- A generic public-contribution CONTRIBUTING.md inherited from the upstream
+  awesome-list workflow.
+- No LICENSE file, though README declares CC BY 4.0.
+- No request.txt, STATUS.md, docs/plan.md, or docs/taxonomy.md.
+
+New Repository Identity
+-----------------------
+New name:        Self-Hosting Handbook
+Repository:      aidenlive/Self-Hosting-Guide (git path unchanged)
+Identity:        An independent, privately maintained handbook for self-hosting
+                 on personal hardware, home servers, and VMs. No longer presents
+                 as the upstream awesome-list or its author's project.
+
+Private / Local / VM Usage Assumptions
+--------------------------------------
+- The repository is documentation only: Markdown read locally, in an editor, on
+  a git host, or exported to PDF/HTML. There is no application to deploy.
+- Intended for offline-first reading. No build step, no server, no analytics,
+  no external runtime dependencies required to use the content.
+- Optional tooling (link checking, Markdown linting, PDF export) is local and
+  opt-in, never required to read the guide.
+
+Scope Boundaries
+----------------
+In scope:
+- Full rebrand to "Self-Hosting Handbook" and removal of upstream owner branding.
+- Split the monolith into a navigable docs/ system with a lean README index.
+- Rewrite narrative/explanatory prose to writer-agent.xml standards.
+- Reorganize and curate the resource catalogs; modernize obviously dated items.
+- Establish governance files (request.txt, STATUS.md, docs/plan.md,
+  docs/taxonomy.md) and a proper LICENSE with upstream attribution.
+
+Out of scope:
+- Live verification of all ~2,745 external links (tracked as a known limitation).
+- Re-creating or re-hosting upstream screenshot images.
+- Adding code, applications, or deployable services.
+
+Acceptance Criteria
+-------------------
+- "Self-Hosting Handbook" is the active identity across README, docs, and metadata.
+- All original content lives under @archives/ with original relative paths.
+- README is a concise index linking into a docs/ system.
+- Core topics are rewritten to writer-agent.xml standards (clarity, accuracy,
+  no filler, evidence-based, defined terms).
+- LICENSE present (CC BY 4.0) with explicit upstream attribution.
+- request.txt, STATUS.md, docs/plan.md, docs/taxonomy.md reflect reality.
+- No active reference depends on the mikeroyal fork identity except documented
+  attribution.
+
+Risks, Blockers, Open Questions
+-------------------------------
+- Link rot: a curated list of this size will contain dead/redirected links.
+  Mitigation: documented as a known limitation; structure supports incremental
+  fixes.
+- Attribution: CC BY 4.0 requires crediting the upstream author; handled in
+  LICENSE and docs/taxonomy.md. Resolved.
+- Image durability: upstream-hosted images are intentionally dropped rather than
+  re-hosted; the new system is text-first. Resolved.
